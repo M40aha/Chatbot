@@ -1,54 +1,83 @@
-# Chatbot
+# 🤖 Smart Voice Chatbot
 
-This project is a real-time conversational chatbot with a web interface to interact with users using Cohere for responses and ElevenLabs for high-quality text-to-speech voices.
+**Smart Voice Chatbot** is an interactive Arabic-speaking assistant (Saudi dialect) built with AI, speech recognition, and voice synthesis.  
+It features a modern UI, real-time voice interaction, light/dark themes, and supports both text and voice chat.
 
-<img width="1659" height="1303" alt="image" src="https://github.com/user-attachments/assets/9ab34162-3b3e-4084-a75f-1670008f4864" />
+---
 
-## Key Features
+## ✨ Features
+- 🎤 **Real-time voice chat** using [ElevenLabs](https://elevenlabs.io) for speech generation.
+- 🧠 **AI-powered conversations** with [Cohere API](https://cohere.ai) for Arabic NLP.
+- 🗣 **Speech-to-text** via RealtimeSTT.
+- 💬 **Dynamic chat interface** with a typewriter effect.
+- 🎨 **Light/Dark mode** with vibrant colors.
+- 📱 **Responsive design** for all devices.
 
-- Real-time speech-to-text conversion
-- Natural language processing for understanding user queries
-- Audio response generation
-- WebSocket-based real-time communication
+---
 
-## How it works
+## 🛠️ Requirements
+- [Anaconda](https://www.anaconda.com/) installed
+- Python 3.10
+- API Keys from:
+  - [Cohere](https://dashboard.cohere.com/api-keys)
+  - [ElevenLabs](https://elevenlabs.io)
 
-This chatbot application provides an interactive voice-enabled chat interface with the following components:
+---
 
-1. **Frontend Interface**:
-   - A modern, responsive web interface built with HTML, CSS, and JavaScript
-   - Real-time text display and message history
-   - Voice input with visual feedback
+## 📥 Installation & Setup
 
-2. **Backend Services**:
-   - `Chatbot.py`: Handles chat logic, processes user input, and generates responses
-   - `RealtimeSTT_Server.py`: Processes audio streams and converts speech to text in real-time
+### **First Terminal (Main Setup)**
+# 1. Open Anaconda Prompt
+# 2. Install Git
+conda install git
 
-## Requirements
+# 3. Create and activate environment
+conda create -n CHAT_env python=3.10
+conda activate CHAT_env
 
-Before setting up the project, ensure you have the following:
+# 4. Clone the repository
+git clone https://github.com/M40aha/MChatbot.git
 
-- **Python (3.9 - 3.12)**
-- **API Keys**:
-  - ElevenLabs API key (for text-to-speech functionality)
-  - Cohere API key (for the `command-r7b-arabic-02-2025` model used for Arabic language processing)
-- **Dependencies**:
-  - All required Python packages are listed in `requirements.txt`
+# 5. Navigate to project folder
+cd MChatbot
+
+# 6. Install requirements
+pip install -r requirements.txt
+
+# 7. Install RealtimeSTT
+pip install RealtimeSTT
+
+# 8. Start the RealtimeSTT server
+python RealtimeSTT_Server.py
 
 
-## Setup
-1- Clone the repository.
 
-2- install the required libraries: `pip install -r requirements.txt`.
+Second Terminal (Run Chatbot Backend):
+conda activate CHAT_env
+cd MChatbot
+python Chatbot.py
 
-3- Insert the Cohere and ElevenLabs API keys in `Chatbot.py`. (I added a demo API keys for testing)
 
-4- Run the real-time speech-to-text server: `python RealtimeSTT_Server.py`.
-  
-5- Run the chatbot frontend: `python Chatbot.py`.
+🚀 How to Use:
+Open the app in your browser..
+http://localhost:5000
+Click the 🎤 microphone button to speak, or type in the input box.
+Toggle 🌞/🌙 to switch between light and dark mode.
 
-6- Navigate to `http://127.0.0.1:5000` to use the chatbot.
 
-## Showcase
 
-https://github.com/user-attachments/assets/dcbd466c-79c9-4209-8db7-b0704ef6f665
+📂 Project Structure
+
+📁 MChatbot
+ ├── Chatbot.py            # Backend server
+ ├── RealtimeSTT_Server.py # Real-time speech server
+ ├── index.html            # Frontend UI
+ ├── style.css             # Styling
+ ├── script.js             # UI logic
+ ├── realtime.js           # Speech processing
+ ├── requirements.txt      # Dependencies
+ └── README.md             # This file
+📸 Screenshot
+
+
+Developed by Eng. Maha Alamri.
